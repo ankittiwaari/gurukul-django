@@ -78,11 +78,10 @@ WSGI_APPLICATION = 'gurukul.wsgi.application'
 DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "gurukul",
-        "USER": "postgres",
-        "PASSWORD": "passwd",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
+        "OPTIONS": {
+            "service": "db_service",
+            "passfile": ".pgpass"
+        }
     }
 }
 
